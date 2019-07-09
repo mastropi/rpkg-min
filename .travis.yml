@@ -1,2 +1,8 @@
 language: r
 cache: packages
+
+# What R releases to build
+r:
+  - oldrel
+  - release
+  - devel
