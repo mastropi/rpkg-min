@@ -6,3 +6,22 @@ r:
   - oldrel
   - release
   - devel
+
+#branches:
+#  except:
+#  - legacy
+#  - experimental
+#
+
+#notifications
+#  email:
+#    - anotherperson@gmail.com
+#  on_success
+#  on_failure
+#
+
+before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
+deploy:
+  provider: script
+  script: Rscript -e 'pkgdown::deploy_site_github()'
+  skip_cleanup: true
